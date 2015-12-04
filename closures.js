@@ -69,9 +69,13 @@ var makeCounter = function(){
 
 
 /*
+
   Write a function that does something simple (console, alert, etc). Write a second function that accepts the first
   function as it's first parameter. The second function should return a new third function which, when invoked, invokes the first,
   original function that was passed in, but will only ever do so once.
+
+  Write a function named codeLove that returns the string 'I love code'. Write a second function named codeFriend that accepts the first function as it's first parameter. The second function should return a new third function. Store the third function in a variable, codeEcho which, when invoked, invokes the first, original function that was passed in, but will only ever do so once (returns null after first invocation).
+
 */
 
   //Code Here
@@ -127,6 +131,9 @@ cheer3();
 
 
   Fix the counter function so that it works the way you expect it to work. (logging 1 then 2 then 3, etc) 
+
+  Fix the counter function so that it works the way you expect it to work. (logging 1 then 2 then 3, etc) (Note: No unit test for this one because of the timeout)
+
 */
 
     //Code Here
