@@ -10,11 +10,12 @@ var outer = function(){
 //Invoke outer saving the return value into another variable called 'inner'.
 
   //Code Here
+  var inner = outer();
 
 //Once you do that, invoke inner.
 
   //Code Here
-
+inner();
 
 
 //Next problem
@@ -33,6 +34,8 @@ var callFriend = function(){
 //Do what you need to do in order to call your function and get 'Calling Jake at 435-215-9248' in your console.
 
   //Code Here
+var call = callFriend();
+call("435-215-9248");
 
 
 
@@ -45,11 +48,19 @@ var callFriend = function(){
 */
 
   //Code Here
+var makeCounter = function(){
+  var num = 0;
+  function doCount(){
+      return num++;  
+  }
+  return doCount;
+};
+
   var count = makeCounter();
-  count() // 1
-  count() // 2
-  count() // 3
-  count() // 4
+  count(); // 1
+  count(); // 2
+  count(); // 3
+  count(); // 4
 
 
 
@@ -58,19 +69,30 @@ var callFriend = function(){
 
 
 /*
-  Write a function that does something simple (console, alert, etc). Write a second function that accepts the first function as it's first parameter. The second function should return a new third function which, when invoked, invokes the first, original function that was passed in, but will only ever do so once.
+  Write a function that does something simple (console, alert, etc). Write a second function that accepts the first
+  function as it's first parameter. The second function should return a new third function which, when invoked, invokes the first,
+  original function that was passed in, but will only ever do so once.
 */
 
   //Code Here
 
+var cheer1 = function() {
+  function cheer2() {
+    alert("Right On!");
+  }
+  return cheer2;
+};
 
+var cheer3 = cheer1();
+cheer3();
 
 //Next Problem
 
 
-
 /*
-  Now, similar to the last problem, write a function called 'fnCounter' that accepts two parameters. The first parameter will be an anonymous function and the second parameter, 'N', will be a number. Now, in 'fnCounter', allow the anonymous funciton to be invoked 'N' number of times. After it's been invoked 'N' number of times, return 'STOP'.
+  Now, similar to the last problem, write a function called 'fnCounter' that accepts two parameters.
+  The first parameter will be an anonymous function and the second parameter, 'N', will be a number.
+  Now, in 'fnCounter', allow the anonymous funciton to be invoked 'N' number of times. After it's been invoked 'N' number of times, return 'STOP'.
 */
 
 
@@ -88,9 +110,12 @@ var callFriend = function(){
     }
   };
 
-  Above you have a function named counter. Examine the function (without running the code) then below write what you expect to happen when the funciton is invoked. *Hint: setTimeout calls a function or evaluates an expression after a specified number of milliseconds.
+  Above you have a function named counter. Examine the function (without running the code) then below write 
+  what you expect to happen when the funciton is invoked. *Hint: setTimeout calls a function or evaluates an 
+  expression after a specified number of milliseconds.
 
     //Answer Here
+    //Nothing.
 
 
   Now, run the function in your console and note what happpens.
@@ -98,14 +123,23 @@ var callFriend = function(){
   Was your answer right or wrong?
 
     //Answer Here
+  I was wrong. The answer came out to be 6.
 
 
-  Fix the counter function so that it works the way you expect it to work. (logging 1 then 2 then 3, etc)
+  Fix the counter function so that it works the way you expect it to work. (logging 1 then 2 then 3, etc) 
 */
 
     //Code Here
 
 
+  // var counter = function(){
+  //   for (var i=1; i<=5; i++) {
+  //     setTimeout( function timer(){
+  //         console.log( i );
+  //     }, i*1000 );
+  //   }
+  // };
+Done. Assumptions have been made.
 
 //Next Problem
 
