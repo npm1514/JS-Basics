@@ -20,8 +20,6 @@ inner();
 
 //Next problem
 
-
-
 var callFriend = function(){
   var friend = 'Jake';
   function callF(number){
@@ -38,10 +36,7 @@ var call = callFriend();
 call("435-215-9248");
 
 
-
 //Next Problem
-
-
 
 /*
   Write a function called makeCounter that makes the following code work properly.
@@ -63,32 +58,27 @@ var makeCounter = function(){
   count(); // 4
 
 
-
 //Next Problem
-
-
 
 /*
 
-  Write a function that does something simple (console, alert, etc). Write a second function that accepts the first
-  function as it's first parameter. The second function should return a new third function which, when invoked, invokes the first,
-  original function that was passed in, but will only ever do so once.
-
-  Write a function named codeLove that returns the string 'I love code'. Write a second function named codeFriend that accepts the first function as it's first parameter. The second function should return a new third function. Store the third function in a variable, codeEcho which, when invoked, invokes the first, original function that was passed in, but will only ever do so once (returns null after first invocation).
+  Write a function named codeLove that returns the string 'I love code'. Write a second function named codeFriend 
+  that accepts the first function as it's first parameter. The second function should return a new third function.
+  Store the third function in a variable, codeEcho which, when invoked, invokes the first, original function that
+  was passed in, but will only ever do so once (returns null after first invocation).
 
 */
 
-  //Code Here
-
-var cheer1 = function() {
-  function cheer2() {
-    alert("Right On!");
+//Code Here
+var codeFriend = function() {
+  function codeLove() {
+    return "I love code";
   }
-  return cheer2;
+  return codeLove;
 };
 
-var cheer3 = cheer1();
-cheer3();
+var codeEcho = codeFriend();
+codeEcho();
 
 //Next Problem
 
@@ -99,10 +89,15 @@ cheer3();
   Now, in 'fnCounter', allow the anonymous funciton to be invoked 'N' number of times. After it's been invoked 'N' number of times, return 'STOP'.
 */
 
-
+var fnCounter = function(function, N) {
+  for (var i = 0, i < N; i++) {
+    return function () {
+    }
+  }
+  return "STOP";
+}
 
 //Next Problem
-
 
 
 /*
@@ -119,7 +114,7 @@ cheer3();
   expression after a specified number of milliseconds.
 
     //Answer Here
-    //Nothing.
+   Starting at 1, it will log 5 more times to 6 after 1, 2, 3, 4, and 5 seconds.
 
 
   Now, run the function in your console and note what happpens.
@@ -127,30 +122,24 @@ cheer3();
   Was your answer right or wrong?
 
     //Answer Here
-  I was wrong. The answer came out to be 6.
+I was kind of right. it went straight to six and then counted 5 seconds.
 
-
-  Fix the counter function so that it works the way you expect it to work. (logging 1 then 2 then 3, etc) 
 
   Fix the counter function so that it works the way you expect it to work. (logging 1 then 2 then 3, etc) (Note: No unit test for this one because of the timeout)
 
 */
 
     //Code Here
+  var counter = function(){
+    for (var i=1; i<=5; i++) {
+      setTimeout( function timer(){
+          console.log( i );
+      }, i*1000 );
+    }
+  };
 
-
-  // var counter = function(){
-  //   for (var i=1; i<=5; i++) {
-  //     setTimeout( function timer(){
-  //         console.log( i );
-  //     }, i*1000 );
-  //   }
-  // };
-Done. Assumptions have been made.
 
 //Next Problem
-
-
 
 /*
   Make the following code work
@@ -165,4 +154,21 @@ Done. Assumptions have been made.
   *Hint: Don't let this fool you. Break down what's really happening here.
 */
 
+var pick = function() {
+  var num = -1;
 
+  return function pick2() {
+    num++;
+    funcArray.push(pick2);
+    console.log(num);
+  }
+}
+
+var funcArray = [pick()];
+
+  funcArray[0]();
+  funcArray[1]();
+  funcArray[2]();
+  funcArray[3]();
+  funcArray[4]();
+  funcArray[5]();

@@ -11,21 +11,23 @@ function isTyler(otherName) {
 	if (otherName === name) {
 		return true;
 	}
+	else {
+		return false;
+	}
 }
-
 
 //Next problem
 
 
 
 //Create a function called getName that uses prompt() to prompt the user for their name, then returns the name.
+
+
+  //Code Here
 function getName(userName) {
 	userName = prompt("Hi! What is your name?  My name is Nick.", "Some Person");
 	return userName;
 }
-
-  //Code Here
-
 
 //Next Problem
 
@@ -35,9 +37,9 @@ function getName(userName) {
 //then alerts "Welcome, " plus whatever the users name is.
 
   //Code Here
-function welcome(){
-	getName();
-	alert("Welcome " + userName + "!");
+function welcome(userName){
+	userName = getName();
+	alert("Welcome, " + userName);
 }
 
 //Next problem
@@ -81,11 +83,11 @@ function myName() {
 //Now save the function definition of myName into a new variable called newMyName
 
   //Code Here
-var newMyName = myName();
+var newMyName = myName;
 
 //Now alert the result of invoking newMyName
 
-alert(newMyName);
+alert(newMyName());
 
 //Next problem
 
@@ -107,4 +109,4 @@ function outerFn() {
 
 //Now invoke innerFn.
 
-innerFn;
+innerFn();
